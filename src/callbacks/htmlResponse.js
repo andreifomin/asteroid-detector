@@ -1,10 +1,11 @@
-// Default values
+// Default values.
 const dateStart = "2019-01-01";
 const dateEnd = "2019-01-07";
 const withinValue = "9000000";
 const withinUnits = ["kilometers", "miles"];
 
-const htmlResponse = `
+// Adding an HTML form to the App to make it possible to change default values.
+const htmlTags = `
   <h2>Asteroid Detector</h2>
   <form action="/data" method="POST">
     <label for="dateStart">Date start</label>
@@ -23,5 +24,9 @@ const htmlResponse = `
     <input type="submit" value="Submit">
   </form>
 `;
+
+function htmlResponse(req, res) {
+  res.send(htmlTags);
+}
 
 module.exports = htmlResponse;
