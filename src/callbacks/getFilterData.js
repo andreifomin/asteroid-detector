@@ -43,7 +43,7 @@ function getFilterData(req, res) {
         .map(elem => elem.name);
 
       const responseData = {
-        asteroids: asteroidNames,
+        asteroids: [... new Set(asteroidNames)],
       };
 
       res.json(responseData);
